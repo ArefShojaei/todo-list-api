@@ -23,7 +23,7 @@ exports.getById = async (req, res) => {
     try {
         const { id } = req.params
         
-        const todo = await TodoModel.findOne({ id })
+        const todo = await TodoModel.findOne({ _id : id })
 
 
         return res.status(200).json({
@@ -82,4 +82,23 @@ exports.deleteAll = async (req, res) => {
     }
 }
 
-exports.deleteById = async (req, res) => {}
+exports.deleteById = async (req, res) => {
+    try {
+        const { id } = req.params
+
+        const todo = await TodoModel.deleteOne({ _id : id })
+
+        return res.status(200).json({
+            status : "Success",
+            code : 200,
+            message : "Todo was deleted.",
+            todo,
+        }) 
+    } catch (err) {
+        return res.status(500).json({
+            status : "Error",
+            code : 500,
+            message : "Request was failed"
+        })
+    }
+}
