@@ -51,7 +51,7 @@ exports.updateById = async (req, res) => {
         return res.status(200).json({
             status : "Success",
             code : 200,
-            message : "Todo was gotten.",
+            message : "Todo was updated.",
             todo : updatedTodo,
         }) 
     } catch (err) {
@@ -63,6 +63,23 @@ exports.updateById = async (req, res) => {
     }
 }
 
-exports.deleteAll = async (req, res) => {}
+exports.deleteAll = async (req, res) => {
+    try {
+        const todos = await TodoModel.deleteMany({})
+
+        return res.status(200).json({
+            status : "Success",
+            code : 200,
+            message : "All todos were deleted.",
+            todos,
+        }) 
+    } catch (err) {
+        return res.status(500).json({
+            status : "Error",
+            code : 500,
+            message : "Request was failed"
+        })
+    }
+}
 
 exports.deleteById = async (req, res) => {}
