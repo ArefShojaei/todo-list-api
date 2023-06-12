@@ -5,6 +5,7 @@ const port = APP_PORT || 3000
 const cors = require('cors');
 const notFoundRoute = require('@middlewares/404-middleware');
 const todoRoute = require('@routes/todo-route');
+const mongoConnect = require('@databases/mongodb-database');
 
 module.exports = () => {
     // init cors config
@@ -15,5 +16,6 @@ module.exports = () => {
     app.use(notFoundRoute)
 
     // launch the app
-    app.listen(port, () => console.log(`App is running on port ${port}...`))
+    mongoConnect()
+        .then(() => app.listen(port, () => console.log(`App is running on port ${port}...`)))
 }
