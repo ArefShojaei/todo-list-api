@@ -1,6 +1,7 @@
 const { Router } = require("express");
 const router = Router()
 const {
+    createTodo,
     getAll,
     getById,
     updateById,
@@ -10,6 +11,7 @@ const {
 
 router
     .get("/", getAll)
+    .post("/", createTodo)
     .get("/:id", getById)
     .patch("/:id", updateById)
     .delete("/", deleteAll)

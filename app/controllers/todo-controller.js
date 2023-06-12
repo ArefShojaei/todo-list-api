@@ -1,5 +1,27 @@
 const TodoModel = require('@models/todo-model');
 
+exports.createTodo = async (req, res) => {
+    try {
+        const { title, content } = req.body
+
+        const todo = new TodoModel({ title, content })
+        await todo.save()
+
+        return res.status(200).json({
+            status : "Success",
+            code : 200,
+            message : "Todo was created.",
+            todo
+        }) 
+    } catch (err) {
+        return res.status(500).json({
+            status : "Error",
+            code : 500,
+            message : "Request was failed"
+        })
+    }
+}
+
 exports.getAll = async (req, res) => {
     try {
         const todos = await TodoModel.find({})
