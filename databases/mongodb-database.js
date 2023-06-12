@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
 const {
-    mongodb: { db, host, port },
+    mongodb: { url },
 } = require("@configs/database-config");
 
 module.exports = async () => {
     try {
-        const connection = await mongoose.connect(`mongodb://${host}:${port}/${db}`)
+        const connection = await mongoose.connect(url)
         console.log("Database was connected successfully.");
 
 

@@ -1,9 +1,7 @@
-const { MONGODB_HOST, MONGODB_PORT, MONGODB_DB } = process.env
+const { MONGODB_URL } = process.env
 
 module.exports = {
     mongodb : {
-        host : MONGODB_HOST,
-        port : MONGODB_PORT,
-        db : MONGODB_DB,
+        url : MONGODB_URL,
     }
 }
