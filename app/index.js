@@ -8,9 +8,9 @@ const todoRoute = require('@routes/todo-route');
 const mongoConnect = require('@databases/mongodb-database');
 
 module.exports = () => {
-    // init get data and set in 'req.body'
+    // set request data in 'req.body'
     app.use(express.urlencoded({ extended : false }))
-    
+
     // init JSON parser
     app.use(express.json())
 
