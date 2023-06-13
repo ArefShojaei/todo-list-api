@@ -32,6 +32,6 @@
 
 ###
 
-<p align="left">🔗 <POST> "/api/todos/"  { Create new todo }<br><br>🔗 <GET> "/api/todos/"    { Get all todos }<br><br>🔗 <GET> "/api/todos/:id"    { Get todo by ID }<br><br>🔗 <PATCH> "/api/todos/:id"   { Update todo by ID }  <br><br>🔗 <DELETE> "/api/todos/"    { Delete all todos }<br><br>🔗 <DELETE> "/api/todos/:id"    { Delete todo by ID }</p>
+<p align="left">🔗 { POST } -- "/api/todos/" -- { Create new todo }<br><br>🔗 { GET } -- "/api/todos/" --  { Get all todos }<br><br>🔗 { GET } -- "/api/todos/:id"  --  { Get todo by ID }<br><br>🔗 { PATCH } -- "/api/todos/:id" --  { Update todo by ID }  <br><br>🔗 { DELETE } -- "/api/todos/" --  { Delete all todos }<br><br>🔗 { DELETE } -- "/api/todos/:id"  --  { Delete todo by ID }</p>
 
 ###
