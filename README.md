@@ -27,8 +27,10 @@
 <p align="left">1️⃣ npm install<br>2️⃣ create .env file + adding variables<br>3️⃣ npm start<br>4️⃣ use it with routing system like "/api/todos/" + "Request Methods"</p>
 
 ###
+###
+###
 
-<h3 align="left">API End Points + Methods</h3>
+<h2 align="left">API End Points + Methods</h2>
 
 ###
 
